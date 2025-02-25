@@ -1,1 +1,1 @@
-bucket_name = "web-app-bucket-898933"
+bucket_name = "web-app-bucket-898933-way"
