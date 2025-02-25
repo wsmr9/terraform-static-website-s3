@@ -1,6 +1,6 @@
 module "s3" {
   source         = "./modules/s3"
-  bucket_name    = "example"
+  bucket_name    = var.bucket_name
 }
 
 module "cloudfront" {
