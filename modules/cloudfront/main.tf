@@ -23,6 +23,13 @@ resource "aws_cloudfront_distribution" "cf_distribution" {
     allowed_methods        = var.allowed_methods
     cached_methods         = var.cached_methods
     compress               = true
+    forwarded_values {
+      query_string = false
+
+      cookies {
+        forward = "none"
+      }
+    }
   }
 
   custom_error_response {
