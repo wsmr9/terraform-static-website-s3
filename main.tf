@@ -9,7 +9,7 @@ module "cloudfront" {
 }
 
 resource "aws_s3_bucket_policy" "s3_policy" {
-  bucket = module.s3_static_site.s3_bucket_name
+  bucket = module.s3.s3_bucket_name
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -19,7 +19,7 @@ resource "aws_s3_bucket_policy" "s3_policy" {
           Service = "cloudfront.amazonaws.com"
         }
         Action = "s3:GetObject"
-        Resource = "${module.s3_static_site.s3_bucket_arn}/*"
+        Resource = "${module.s3.s3_bucket_arn}/*"
         Condition = {
           StringEquals = {
             "AWS:SourceArn" = module.cloudfront.cloudfront_arn
