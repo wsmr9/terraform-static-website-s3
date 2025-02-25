@@ -12,7 +12,7 @@ resource "aws_cloudfront_distribution" "cf_distribution" {
   default_root_object = var.default_root_object
 
   origin {
-    domain_name              = var.bucket_name
+    domain_name              = var.bucket_domain_name
     origin_id                = "S3-${var.bucket_name}"
     origin_access_control_id = aws_cloudfront_origin_access_control.oac.id
   }

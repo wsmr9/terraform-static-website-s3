@@ -3,6 +3,11 @@ variable "bucket_name" {
   type        = string
 }
 
+variable "bucket_domain_name" {
+  description = "The domain name of the S3 bucket"
+  type        = string
+}
+
 variable "description" {
   description = "The description of the OAC"
   default     = "OAC for S3 bucket"

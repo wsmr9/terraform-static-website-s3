@@ -6,6 +6,7 @@ module "s3" {
 module "cloudfront" {
   source      = "./modules/cloudfront"
   bucket_name = module.s3.s3_bucket_name
+  bucket_domain_name = module.s3.s3_domain_name
 }
 
 resource "aws_s3_bucket_policy" "s3_policy" {
